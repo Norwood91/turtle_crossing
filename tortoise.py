@@ -11,12 +11,11 @@ class Tortoise(Turtle):
         self.shape("turtle")
         self.color("White")
         self.penup()
-        self.head = self
+        self.setheading(UP)
         self.goto(STARTING_POSITION)
 
     def move(self):
-        self.head.setheading(UP)
-        self.head.forward(MOVE_DISTANCE)
+        self.forward(MOVE_DISTANCE)
 
 
 

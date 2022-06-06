@@ -13,6 +13,7 @@ screen.tracer(0)
 
 tortoise = Tortoise()
 car_manager = Cars()
+scoreboard = Scoreboard()
 
 
 screen.listen()
@@ -30,10 +31,12 @@ while game_is_on:
     for car in car_manager.all_cars:
         if car.distance(tortoise) < 20:
             game_is_on = False
+            scoreboard.game_over()
 
     #Detect a successful crossing
     if tortoise.at_finish_line():
         tortoise.go_to_start()
         car_manager.level_up()
+        scoreboard.increase_level()
 
 screen.exitonclick()

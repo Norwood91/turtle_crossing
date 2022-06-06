@@ -12,11 +12,19 @@ class Tortoise(Turtle):
         self.color("White")
         self.penup()
         self.setheading(UP)
-        self.goto(STARTING_POSITION)
+        self.go_to_start()
 
     def move(self):
         self.forward(MOVE_DISTANCE)
 
 
+    def at_finish_line(self):
+        if self.ycor() > FINISH_LINE:
+            return True
+        else:
+            return False
+
+    def go_to_start(self):
+        self.goto(STARTING_POSITION)
 
 
